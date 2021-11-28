@@ -1,6 +1,6 @@
 
 wall = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
-
+# maze shape
 #maze1 = [" ","X","X","X","X"]
 #maze2 = [" ","X"," "," "," "]
 #maze3 = [" ","X"," ","X"," "]
@@ -11,8 +11,8 @@ wall = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4
 lab=[]
 def mazecreation():
         maze = []
-        for i in range(0,5):
-                for j in range(0,5):
+        for i in range(0,5): #line
+                for j in range(0,5): #column
                                       
                         if tuple([i,j]) in wall:
                                 maze.append("X")
