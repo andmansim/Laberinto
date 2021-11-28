@@ -2,9 +2,21 @@
 wall = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
 
 space = ((1,0), (1,2), (1,3), (1,4), (2,0), (2,2), (2,4), (3,0), (3,1), (3,2), (3,4))
+#maze1 = [" ","X","X","X","X"]
+maze1 = []
+maze2 = []
+maze3 = []
+maze4 = []
+maze5 = []
+def mazecreation():
+        for i in range(0,5):
+                
+                if tuple([0,i]) in wall:
+                        maze1.append("X")
+                else:
+                        maze1.append(" ")
+mazecreation()
 
-
-maze1 = [" ","X","X","X","X"]
 maze2 = [" ","X"," "," "," "]
 maze3 = [" ","X"," ","X"," "]
 maze4 = [" "," "," ","X"," "]
