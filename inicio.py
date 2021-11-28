@@ -1,8 +1,12 @@
 
 wall = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
 
-space = ((1,0), (1,2), (1,3), (1,4), (2,0), (2,2), (2,4), (3,0), (3,1), (3,2), (3,4))
 #maze1 = [" ","X","X","X","X"]
+#maze2 = [" ","X"," "," "," "]
+#maze3 = [" ","X"," ","X"," "]
+#maze4 = [" "," "," ","X"," "]
+#maze5 = ["X","X","X","X"," "]
+
 maze1 = []
 maze2 = []
 maze3 = []
@@ -15,12 +19,26 @@ def mazecreation():
                         maze1.append("X")
                 else:
                         maze1.append(" ")
+                        
+                if tuple([1,i]) in wall:
+                        maze2.append("X")
+                else:
+                        maze2.append(" ")
+                if tuple([2,i]) in wall:
+                        maze3.append("X")
+                else:
+                        maze3.append(" ")
+                if tuple([3,i]) in wall:
+                        maze4.append("X")
+                else:
+                        maze4.append(" ")
+                if tuple([4,i]) in wall:
+                        maze5.append("X")
+                else:
+                        maze5.append(" ")
 mazecreation()
 
-maze2 = [" ","X"," "," "," "]
-maze3 = [" ","X"," ","X"," "]
-maze4 = [" "," "," ","X"," "]
-maze5 = ["X","X","X","X"," "]
+
 lab=[]
 lab.append (maze1)
 lab.append (maze2)  
