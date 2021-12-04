@@ -29,28 +29,7 @@ for x in lab:
 x = 0
 y = 0
 direction = "down"
-"""
-def mazemovements(x1,y1, direction1):
-        if (x1,y1) in wall:  # down
-                x1 = x1 + 1  
-                if (x1,y1) in wall:  # right
-                        x1 = x1 - 1 
-                        y1 = y1 + 1
-                        direction1 = "right"
-                        if (x1, y1) in wall: # up
-                                y1 = y1 - 1 
-                                x1 = x1 - 1
-                                direction1 = "up"
-        return x1, y1, direction1
-                
 
-#while x < 4 and y < 4:
-           
-(x,y, direction)=mazemovements(x,y, direction)
-print (x, y, direction)
-
-print("You win!!")
-"""
 
 def downmovement(x1, y1, direction1):
         x1 = x1 + 1
@@ -72,16 +51,16 @@ def upmovement(x3, y3, direction3):
         return x3, y3, direction3
 
 fin = False
-while fin != True:
-        
-        while direction == "down":
+while fin != True:     
+           
+        if direction == "down":
                 x,y,direction= downmovement(x, y, direction)
         
-                if (x,y) in wall:
+                if (x,y) in wall or x > 4 :
                         x = x - 1
                         x,y,direction = rightmovement(x, y, direction)
                 
-                        if (x,y) in wall:
+                        if (x,y) in wall or y > 4:
                                 y = y - 1
                                 x,y,direction = upmovement(x, y, direction)
                                 print(x,y,direction) 
@@ -89,15 +68,14 @@ while fin != True:
                                 print(x,y,direction)
                 else:
                         print(x,y,direction)  
-                        
-        while direction == "right":
+        elif direction == "right":
                 x,y,direction = rightmovement(x, y, direction)
         
-                if (x,y) in wall:
+                if (x,y) in wall or y > 4:
                         y = y - 1
                         x,y,direction = downmovement(x, y, direction)
                 
-                        if (x,y) in wall:
+                        if (x,y) in wall or x > 4:
                                 x = x - 1
                                 x,y,direction = upmovement(x, y, direction)
                                 print(x,y,direction) 
@@ -106,14 +84,14 @@ while fin != True:
                 else:
                         print(x,y,direction)
                 
-        while direction == "up":
+        elif direction == "up":
                 x,y,direction = upmovement(x, y, direction)
         
-                if (x,y) in wall:
+                if (x,y) in wall or x > 4:
                         x = x + 1
                         x,y,direction = rightmovement(x, y, direction)
                 
-                        if (x,y) in wall:
+                        if (x,y) in wall or y > 4:
                                 y = y - 1
                                 x,y,direction = downmovement(x, y, direction)
                                 print(x,y,direction) 
@@ -121,8 +99,7 @@ while fin != True:
                                 print(x,y,direction)
                 else:
                         print(x,y,direction)
-                
-if x == 4 and y == 4 :
-        fin = True
-        print("You win")
-        direction = " "
+        if x == 4 and  y == 4 :
+                fin = True
+                print("You win")
+                direction = " "
