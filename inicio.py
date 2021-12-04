@@ -1,5 +1,6 @@
-
 wall = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
+start = ((0,0))
+exit = ((4,4))
 # maze shape
 #maze1 = [" ","X","X","X","X"]
 #maze2 = [" ","X"," "," "," "]
@@ -25,5 +26,12 @@ mazecreation()
 for x in lab:
     print(" ".join(x))
 
+x = 0
+y = 0
+
+def mazemovements(x1,y1):
+        x1 = x1 + 1  # down
+        if (x1,y1) in wall:  # right
+                x1 = x1 - 1
+                y1 = y1 + 1
                 
-        
