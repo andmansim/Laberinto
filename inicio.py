@@ -50,7 +50,15 @@ print (x, y, direction)
 
 print("You win!!")
 
-def right(x2, y2, direction2):
+def rightmovement(x2, y2, direction2):
         x2 = x2 - 1 
-                        y2 = y2 + 1
-                        direction1 = "right"
+        y2 = y2 + 1
+        direction2 = "right"
+
+movement2 = rightmovement(x, y, direction)
+def upmovement(x3, y3, direction3):
+        y3 = y3 - 1 
+        x3 = x3 - 1
+        direction3 = "up"
+
+movement3 = upmovement(x, y, direction)
