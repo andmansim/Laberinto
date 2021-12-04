@@ -28,7 +28,8 @@ for x in lab:
 
 x = 0
 y = 0
-direction = ""
+direction = "down"
+"""
 def mazemovements(x1,y1, direction1):
         if (x1,y1) in wall:  # down
                 x1 = x1 + 1  
@@ -49,16 +50,38 @@ def mazemovements(x1,y1, direction1):
 print (x, y, direction)
 
 print("You win!!")
+"""
+
+def downmovement(x1, y1, direction1):
+        x1 = x1 + 1
+        y1 = y1
+        direction1 = "down"
+        return x1, y1, direction1
 
 def rightmovement(x2, y2, direction2):
         x2 = x2 - 1 
         y2 = y2 + 1
         direction2 = "right"
+        return x2, y2, direction2
 
-movement2 = rightmovement(x, y, direction)
+
 def upmovement(x3, y3, direction3):
         y3 = y3 - 1 
         x3 = x3 - 1
         direction3 = "up"
+        return x3, y3, direction3
 
-movement3 = upmovement(x, y, direction)
+while direction == "down":
+        movement1 = downmovement(x, y, direction)
+        if movement1 in wall:
+                movement2 = rightmovement(x, y, direction)
+while direction == "right":
+        movement2 = rightmovement(x, y, direction)
+        if movement2 in wall:
+                movement3 = upmovement(x, y, direction)
+while direction == "up":
+        movement3 = upmovement(x, y, direction)
+        if movement3 in wall:
+                movement2 = rightmovement(x, y, direction)
+if x == 4 and y == 4:
+        print("You win")
