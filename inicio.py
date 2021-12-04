@@ -71,39 +71,58 @@ def upmovement(x3, y3, direction3):
         direction3 = "up"
         return x3, y3, direction3
 
-while direction == "down":
-        x,y,direction= downmovement(x, y, direction)
-        print(x,y,direction)
-        if (x,y) in wall:
-                x = x - 1
-                x,y,direction = rightmovement(x, y, direction)
-                print(x,y,direction)
-                if (x,y) in wall:
-                        y = y - 1
-                        x,y,direction = upmovement(x, y, direction)
-                        print(x,y,direction)   
-while direction == "right":
-        x,y,direction = rightmovement(x, y, direction)
-        print(x,y,direction)
-        if (x,y) in wall:
-                y = y - 1
-                x,y,direction = downmovement(x, y, direction)
-                print(x,y,direction)
+fin = False
+while fin != True:
+        
+        while direction == "down":
+                x,y,direction= downmovement(x, y, direction)
+        
                 if (x,y) in wall:
                         x = x - 1
-                        x,y,direction = upmovement(x, y, direction)
-                        print(x,y,direction) 
-while direction == "up":
-        x,y,direction = upmovement(x, y, direction)
-        print(x,y,direction)
-        if (x,y) in wall:
-                x = x + 1
+                        x,y,direction = rightmovement(x, y, direction)
+                
+                        if (x,y) in wall:
+                                y = y - 1
+                                x,y,direction = upmovement(x, y, direction)
+                                print(x,y,direction) 
+                        else:
+                                print(x,y,direction)
+                else:
+                        print(x,y,direction)  
+                        
+        while direction == "right":
                 x,y,direction = rightmovement(x, y, direction)
-                print(x,y,direction)
+        
                 if (x,y) in wall:
                         y = y - 1
                         x,y,direction = downmovement(x, y, direction)
-                        print(x,y,direction) 
-if x == 4 and y == 4:
+                
+                        if (x,y) in wall:
+                                x = x - 1
+                                x,y,direction = upmovement(x, y, direction)
+                                print(x,y,direction) 
+                        else:
+                                print(x,y,direction)
+                else:
+                        print(x,y,direction)
+                
+        while direction == "up":
+                x,y,direction = upmovement(x, y, direction)
+        
+                if (x,y) in wall:
+                        x = x + 1
+                        x,y,direction = rightmovement(x, y, direction)
+                
+                        if (x,y) in wall:
+                                y = y - 1
+                                x,y,direction = downmovement(x, y, direction)
+                                print(x,y,direction) 
+                        else:
+                                print(x,y,direction)
+                else:
+                        print(x,y,direction)
+                
+if x == 4 and y == 4 :
+        fin = True
         print("You win")
         direction = " "
